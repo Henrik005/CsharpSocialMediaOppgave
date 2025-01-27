@@ -47,17 +47,13 @@ namespace CsharpSocialMediaOppgave
         }
         public void RemoveFriend()
         {
-            Console.WriteLine("To delete a friend! Please write the number of the order in wich you added them, starting at 0");
-            Console.WriteLine("...I know it's scuffed, shhh...");
-            var input = Convert.ToInt32(Console.ReadLine());
-            for (int i = 0; i < myFriends.Count; i++) 
-            {
-                if (!myFriends[i].Equals(input))
-                {
-                    myFriends.RemoveAt(input);
-                }
-            }
-            
+            Console.WriteLine("To delete a friend? Please write the name of the friend you would like to remove!");
+            var input = Console.ReadLine();
+            int deleteFriend = myFriends.RemoveAll(user => user._name == input);
+
+
+
+
         }
         public void ViewAllFriends()
         {
